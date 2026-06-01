@@ -44,5 +44,10 @@ Understand how to handle sensitive data responsibly and follow Focus Bear’s pr
 4. Cooperate with the investigation and follow company procedures
 
 ## Screenshot 
-![Privacy policy](/Users/ravi/Desktop/internship/Disha1203-intern-repo/milestone-0/screenshots/privacy-policy.png)
+![Privacy policy](screenshots/privacy-policy.png)
+
+## What I learned
+This task taught me that it is not just technicalities that are needed to safely keep things confidential; it is also responsibility. I learned more about the importance of storing, sharing and disposing confidential data in a secure manner, and the dangers of not doing so, such as phishing attacks, unauthorized access and accidental exposure.
+
+I also learned that it is important to report any possible data breaches timely and abide by the company's security policies. In the future, I will ensure that I send information only after confirming with the recipient, use strong passwords with MFA and abide by the least priviledge principle when accessing data.
 
