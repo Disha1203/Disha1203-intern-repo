@@ -36,7 +36,7 @@ To help maintain better posture and movement habits, I used breaks during the po
 - Reposition posture
 - Rest my eyes briefly These reminders helped improve awareness and reduced long periods of sitting without movement.
 
-![Alt text](/Users/ravi/Desktop/internship/Disha1203-intern-repo/milestone-0/screenshots/break-reminder.png)
+![Alt text](screenshots/break-reminder.png)
 
 ---
 
