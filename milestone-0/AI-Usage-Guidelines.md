@@ -38,8 +38,8 @@ AI should be used as a tool for:
 ---
 
 ## Screenshot
-![Used AI to analyze previous-year university question papers and create a study strategy focused on maximizing marks ](screenshots/AI-usage.png)
-
+![img](screenshots/AI-usage.png)
+Used AI to analyze previous-year university question papers and create a study strategy focused on maximizing marks
 
 ## What I Learned
 I found that AI has tremendous potential to enhance productivity, but it can't replace human judgment and critical thinking. The best strategy is to use AI as a research, learning, and a drafting tool while also keeping a critical eye on what it produces.The best way to use AI is to view it as an assistant to help you conduct research, learn new things, and draft content, but also to be vigilant about what it generates and to verify the accuracy, privacy, and final decisions.
