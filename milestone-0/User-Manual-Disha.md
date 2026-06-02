@@ -1,14 +1,16 @@
 # User Manual for Disha
 
 ## My role
+
 * I am working on :
     * Completing Focus Bear's Onboarding tasks
     * Exploring the Focus Bear's app and understanding user needs
     * Working on a research project related to privacy-preserving federated learning
 * The days and times I work are: 
-    * Monday to Friday : 1 to 5 pm
+    * Monday to Friday : 11 am to 3 pm
 
 ## How I Work Best
+
 * I do my best work when:
     * I have clear deadlines
     * When I can explore different approaches and be creative
@@ -22,6 +24,7 @@
     * Communication is lacking on collaborative tasks
 
 ## Communication Style
+
 * I prefer messages to be:
     * Clear , direct with the main point discussed first
     * Concise where possible, with additional details provided when necessary.
@@ -34,6 +37,7 @@
     * if the matter is time sensitve , call me directly
 
 ## Collaboration & Teamwork
+
 * I work best in a team when
     * Communication is open and transparent
     * Team members are respectfut and supportive
@@ -49,6 +53,7 @@
     * On occasion, I may become distracted, but I am actively working on improving this 
 
 ## Focus & Productivity
+
 * I stay focused by
     * Allocating time for a task
     * Remove possible distractions(Focus Bear, ScreenZen)
@@ -60,6 +65,7 @@
     * 
 
 ## Feedback & Growth
+
 * I like feedback to be:
     * Actionable
     * Show examples where possible
@@ -72,6 +78,7 @@
     * Challenge approaches respectifully
 
 ## Fun Facts & Quirks
+
 * One thing people often misunderstand about me is
     * If I'm quiet, I'm usually focused or thinking through a problem, not disengaged.
 * A fun fact about me
