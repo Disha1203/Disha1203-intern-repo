@@ -23,6 +23,24 @@
 
 ---
 
+## Stand-up Meeting Observation
+
+* Participated in Backend team stand-up and noted that they shared updates on what they accomplished, what they are doing, and what is blocking them.
+* Bug fixes, pull request reviews, and development in the near future were discussed. Team members kept each other updated on the status and indicated where there was still work to be done.
+* The stand-up helped me to be able to understand how agile teams stay aligned, communicate progress and bring up blockers early.
+
+![Stand-up meeting](screenshots/Stand-up-meeting.png)
+
+## Retrospective Observation
+
+* I have not done a Focus Bear retrospective, but I have experience in retrospectives that I have attended in a college software engineering project where we had followed Agile practices and I was the Scrum Master of the project.
+* In retrospectives, the team talked about the successful aspects, challenges, and how we can make our next sprint smoother. 
+* An important lesson learned was that it is important to identify road blocks at an early stage and discuss them with the rest of the team. This facilitated better working together and resolution of issues more effectively.
+* Scrum Master role taught me about retrospectives as a tool to make continuous improvement and how it helps for open discussion, reflection, and future improvement.
+
+## One Change I Can Make to Improve Team Collaboration
+
+I will seek clarification early if I am not sure of requirements or how they will be implemented. Instead of taking undue time to deal with the uncertainties alone, I can contact teammates early. This will avoid miscommunication, delays and keep my work on track within the team's expectations.
 
 ## What I Learned
 
