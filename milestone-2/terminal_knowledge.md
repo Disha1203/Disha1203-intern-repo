@@ -43,9 +43,7 @@ A good terminal setup makes development smoother. Choose a terminal client and g
 
 ## Screenshot
 
-
-
-## What I Learned
+![Terminal](screenshots/Ternimal.png)
 
 
 
