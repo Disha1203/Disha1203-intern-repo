@@ -84,3 +84,63 @@ While reviewing an open-source PR, I observed that maintainers carefully examine
 
 ### PR from open src
 ![Open-src-pr](Screenshots/open-src-pr.png)
+
+---
+
+# Writing Meaningful Commit Messages
+
+## Goal 
+
+Learn how to write clear, meaningful commit messages that improve collaboration and code history readability.
+
+## Reflections
+
+### What makes a good commit message?
+
+A good commit message explains purpose of change. It should be detailed enough to allow the members of the team to understand what changes were made, but without having to read the code at that moment.
+
+Characteristics include:
+* Specific and descriptive
+* Concise
+* Action-oriented
+* Consistent formatting
+
+### How does a clear commit message help in team collaboration?
+
+Clear commit messages improve communication among team members by making project history easier to understand. They help reviewers quickly identify changes, simplify debugging, and make it easier to track when and why modifications were introduced.
+
+Benefits include:
+* Faster code reviews
+* Easier troubleshooting
+* Better project documentation
+* Revised guide to onboarding new contributors.
+
+### What are the potential problems with poor commit messages?
+
+The purpose of past changes is hard to understand with bad commit messages. Vague messages give little context and can be time consuming when debugging or looking back at project history.
+
+
+### How can poor commit messages cause issues later?
+
+The purpose of past changes is hard to understand with bad commit messages. Vague messages give little context and can be time consuming when debugging or looking back at project history.
+
+Problems caused by poor commit messages:
+* Harder debugging
+* Confusing project history
+* Slower code reviews
+* Increased maintenance effort
+* Reduced team productivity
+
+## Commits in your repo with different commit message styles
+
+### A vague commit message
+![Vague](Screenshots/vague-commit.png)
+### An overly detailed commit message.
+![Detailed](Screenshots/detailed-commit.png)
+### A well-structured commit message.
+![Structured](Screenshots/structured-commit.png)
+
+## Explore commit histories in an open-source GitHub project
+![Alt text](Screenshots/open-src-commits.png)
+
+---
