@@ -1,10 +1,7 @@
 # Git Understanding 
 
-**Issue Number:** #59
-**Milestone:** 1
-**Date Completed:** 5/6/26
 
----
+# Merge Conflicts
 
 ## Goal
 
@@ -39,9 +36,6 @@ Key lessons learned:
 
 Merge conflicts are typically part of collaborative software development and version control processes, so it is crucial to understand them.
 
-
----
-
 ## Screenshots
 
 ![Branch creation](Screenshots/branch-creation.png)
@@ -51,3 +45,42 @@ Merge conflicts are typically part of collaborative software development and ver
 ![VS Code Merge Editor](Screenshots/merge-editor.png)
 
 ![Commit after conflict resolution](Screenshots/resolved.png)
+
+---
+
+# PR Reviews
+
+## Goal
+
+Learn how to create, review, and collaborate on Pull Requests (PRs) in GitHub.
+
+## Relections
+
+### Why are PRs important in a team workflow?
+
+PRs provide a structured way for devs to review code before it is merged into the main branch. They are used to find bugs, enhance code quality, promote knowledge sharing, and keep the project to a standard. PRs also serve as a history of conversations and decisions about coding changes.
+
+### What makes a well-structured PR?
+
+A good structured Pull Request contains:
+* A clear descriptive title.
+* A summary of changes made.
+* The purpose of the changes.
+* Any related issues/tickets.
+* Testing information.
+* Small and focused changes rather than large unrelated modifications.
+
+These features help reviewers to better understand and consider the proposed changes.
+
+### What did you learn from reviewing an open-source PR?
+
+While reviewing an open-source PR, I observed that maintainers carefully examine code quality, readability, and edge cases before approving changes. Reviewers often suggest improvements, ask questions, and request modifications when necessary. I also learned that constructive discussions and automated tests play an important role in ensuring reliable software development.
+
+## Screenshots 
+
+### PR Request and approval 
+![pr request](Screenshots/pr-approval.png)
+![pr-approval](Screenshots/pr-approval.png)
+
+### PR from open src
+![Open-src-pr](Screenshots/open-src-pr.png)
