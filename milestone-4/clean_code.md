@@ -1,15 +1,7 @@
-# Clean Code Principles
-
-**Issue Number:** #64
-**Milestone:** 4
-**Date Completed:** 11/6/26
-
-
+# Clean code principles
 
 ## Goal
 Understand the core principles of clean code and why they matter in real-world development.
-
-
 
 ## Principles 
 
@@ -149,5 +141,80 @@ def calculate_sum_of_large_numbers(numbers):
 * Easier to test and reuse.
 * Follows clean code principles of readability and maintainability.
 
+---
+
+# Naming Variables & Functions
+
+## Goal 
+Learn how to choose clear and meaningful names for variables and functions.
+
+## Best Practices
+* Use descriptive and meaningful names.
+* Prefer nouns for variables and classes.
+* Prefer verbs for functions and methods.
+* Follow the naming conventions of the programming language.
+* Avoid single-letter names except for common loop counters such as `i` and `j`.
+* Avoid misleading abbreviations.
+* Keep names searchable and easy to pronounce.
+* Be consistent throughout the project.
+
+## Example
+
+### Poorly Named Code
+```
+def f(a): 
+    t = 0
+    for x in a: 
+        if x > 50: 
+            t += x 
+    return t
+```
+
+#### Problems
+* The function name `f` provides no indication of its purpose.
+* The parameter name `a` does not describe the data being passed.
+* The variable `t` does not explain what value is being stored.
+* Developers must read the entire function to understand what it does.
+
+### Refactored Version
+```
+def calculate_sum_of_large_numbers(numbers):
+    total_sum = 0 
+    
+    for number in numbers: 
+        if number > 50: 
+            total_sum += number 
+            
+    return total_sum
+```
+#### Improvements
+* `calculate_sum_of_large_numbers` clearly describes the function's purpose.
+* `numbers` indicates that the input is a collection of numbers.
+* `total_sum` explains what value is being accumulated.
+* The code becomes self-documenting and easier to maintain.
+
+## Reflections
+
+### What makes a good variable or function name?
+A good variable or function name is 
+* descriptive
+* meaningful
+* easy to understand. 
+
+-It should clearly communicate the purpose of the variable or the action performed by the function. 
+It reduces the need for comments since the code itself is self explanatory
+
+### What issues can arise from poorly named variables?
+
+Poorly named variables can make code:
+* difficult to understand
+* maintain
+* debug. 
+- Developers may misunderstand the purpose of a variable, leading to mistakes and bugs. Unclear names also increase the time required to review and modify code.
+
+### How did refactoring improve code readability?
+Refactoring improved readability by replacing vague names with descriptive ones. 
+* The updated names clearly explain the purpose of the function and variables, allowing developers to understand the code quickly without analyzing every line.
+* This makes the code easier to maintain and reduces confusion during future development.
 
 ---
