@@ -1,4 +1,4 @@
-# Issue Title
+# VS Code Productivity
 
 **Issue Number:** #48
 **Milestone:** 2
