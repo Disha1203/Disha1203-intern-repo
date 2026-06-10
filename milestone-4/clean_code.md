@@ -15,7 +15,7 @@ It's easier to
 
 #### Example
 Instead of creating multiple nested conditions to check if a user is an adult, use a simple condition:
-```
+```python
 if age >= 18:
         print("Adult")
 ```
@@ -33,13 +33,13 @@ It's important since:
 
 #### Example
 Poor readability:
-```
+```python
 x = 50000 
 y = 0.08 
 z = x * y
 ```
 Better readability:
-```
+```python
 salary = 50000 
 tax_rate = 0.08 
 tax_amount = salary * tax_rate
@@ -54,7 +54,7 @@ It's importance since:
 
 #### Example
 Instead of repeating the same calculation in multiple places, create a reusable function:
-```
+```python
 def calculate_discount(price, discount_percentage):
     return price - (price * discount_percentage / 100)
 ```
@@ -69,13 +69,13 @@ It's importance since:
 
 #### Example
 Inconsistent naming:
-```
+```python
 userName = "John" 
 user_age = 25 
 UserEmail = "john@example.com"
 ```
 Consistent naming:
-```
+```python
 user_name = "John" 
 user_age = 25
 user_email = "john@example.com"
@@ -90,7 +90,7 @@ It's importance since:
 * Efficient use of system resources
 #### Example
 Inefficient approach:
-```
+```python
 numbers = [1, 2, 3, 4, 5] 
 count = 0 
 for number in numbers: 
@@ -98,7 +98,7 @@ for number in numbers:
 ```
 
 Efficient approach:
-```
+```python
 numbers = [1, 2, 3, 4, 5] 
 count = len(numbers)
 ```
@@ -107,7 +107,7 @@ Using built-in functions when appropriate can improve performance and make code 
 ## Example
 
 ### Messy code
-```
+```python
 def f(a):
     x = 0 
     for i in a: 
@@ -125,7 +125,7 @@ def f(a):
 
 ### Cleaner Version
 
-```
+```python
 def calculate_sum_of_large_numbers(numbers):
     total = 0
     for number in numbers: 
@@ -161,7 +161,7 @@ Learn how to choose clear and meaningful names for variables and functions.
 ## Example
 
 ### Poorly Named Code
-```
+```python
 def f(a): 
     t = 0
     for x in a: 
@@ -177,7 +177,7 @@ def f(a):
 * Developers must read the entire function to understand what it does.
 
 ### Refactored Version
-```
+```python
 def calculate_sum_of_large_numbers(numbers):
     total_sum = 0 
     
@@ -237,7 +237,7 @@ Learn how to break down large functions into smaller, more maintainable units.
 ## Example
 
 ### Original Code
-```
+```python
 def process_student_scores(scores):
     total = 0
     
@@ -270,7 +270,7 @@ def process_student_scores(scores):
 The function is handling multiple responsibilities, making it harder to understand and modify.
 
 ### Refactored Code
-```
+```python
 def calculate_average(scores):
     return sum(scores) / len(scores)
 
@@ -329,7 +329,7 @@ Duplicated code increases maintenance effort because changes must be made in mul
 ## Example
 
 ### Origin code 
-```
+```python
 def calculate_student_discount(price): 
     return price * 0.10 
 
@@ -345,7 +345,7 @@ def calculate_senior_discount(price):
 * The duplicated logic increases maintenance effort.
 
 ### Refactored version
-```
+```python
 def calculate_discount(price, discount_rate): 
     return price * discount_rate 
     
@@ -365,3 +365,102 @@ senior_discount = calculate_discount(100, 0.10)
 * Refactoring removed the repeated logic and placed it into a single reusable function. 
 * This reduced the amount of code, improved readability, and ensured that future changes only need to be made in one location. 
 * The code became easier to maintain and less prone to inconsistencies.
+
+
+# Commenting & Documentation
+
+## Best Practices for Writing Comments and Documentation
+
+Comments should help explain **why** code exists, not simply repeat **what** the code is doing. Well-written code should be self-explanatory, with comments used only when additional context is needed.
+
+### Best Practices
+
+* Write clear and concise comments.
+* Explain the reasoning behind complex logic.
+* Keep comments up to date when code changes.
+* Use documentation strings (docstrings) for functions and classes.
+* Avoid obvious comments that repeat the code.
+* Prefer meaningful variable and function names over excessive comments.
+* Document assumptions, limitations, and important business rules.
+
+---
+
+## Example of Poorly Commented Code
+
+### Original Code
+
+```python
+@app.route('/login', methods=['POST'])
+def login():
+    info = json.loads(request.data)
+
+    # Access the 'username' key from the info dictionary
+    username = info.get('username')
+
+    # Access the 'password' key from the info dictionary
+    password = info.get('password')
+
+    # Query the database for a matching user
+    user = User.objects(name=username, password=password).first()
+
+    if user:
+        login_user(user)
+        return jsonify(user.to_json())
+    else:
+        return jsonify({
+            "status": 401,
+            "reason": "Username or Password Error"
+        })
+```
+
+### Problems
+
+* The comments repeat what the code is already doing.
+* They provide low-level details instead of explaining the purpose of the function.
+* Excessive comments make the code harder to read and maintain.
+* If the implementation changes, these comments can become outdated and misleading.
+
+---
+
+## Improved Version
+
+```python
+# Log in existing users or return a 401 error for invalid credentials
+@app.route('/login', methods=['POST'])
+def login():
+    info = json.loads(request.data)
+    username = info.get('username')
+    password = info.get('password')
+
+    # Retrieve a matching user record from the database
+    user = User.objects(name=username, password=password).first()
+
+    if user:
+        login_user(user)
+        return jsonify(user.to_json())
+    else:
+        return jsonify({
+            "status": 401,
+            "reason": "Username or Password Error"
+        })
+```
+
+### Improvements
+
+* Comments explain the intent of the code rather than describing each line.
+* The comments provide a high-level overview of the login process.
+* Unnecessary and repetitive comments have been removed.
+* The code is easier to read because meaningful comments are used only where additional context is helpful.
+* The comments are brief and less likely to become outdated.
+
+---
+
+# Reflection
+
+## When should you add comments?
+
+Comments should be added when the code requires additional context that is not obvious from the implementation. Examples include explaining complex algorithms, documenting business rules, clarifying assumptions, warning about side effects, or describing why a particular approach was chosen.
+
+## When should you avoid comments and instead improve the code?
+
+Comments should be avoided when they simply describe what the code is doing. In these situations, improving variable names, function names, or code structure is usually a better solution. Clean, self-explanatory code reduces the need for excessive comments and makes maintenance easier.
