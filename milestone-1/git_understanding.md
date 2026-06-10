@@ -144,3 +144,101 @@ Problems caused by poor commit messages:
 ![Alt text](Screenshots/open-src-commits.png)
 
 ---
+
+# Debugging with git bisect
+
+## Goal
+
+Learn how to use git bisect to identify which commit introduced a bug in a project.
+
+## Reflections
+
+### What does git bisect do?
+
+It's a debugging tool that uses binary search to find the commit that introducted a bug
+* By marking known good and bad commit, git checks commits in the middle of the range and narrows down the serach until the problematic commit is found
+
+### When would you use it in a real-world debugging situation?
+
+Useful when a bug is seen after many commits have been made and it's unclear on which caused the problem.
+Used when:
+* debugging application crashes
+* failing tests
+* performance regressions
+* unexpected behaviour occured during development
+
+### How does it compare to manually reviewing commits?
+
+Manually reviewing commits is time consuming especially when there's large commit histories.
+* Since git bisect uses binary search , it reduces the no. of commits that needed to be tested
+* Thus making debugging much faster and efficient
+
+
+## Test Scenario
+
+I created a small test project with multiple commits:
+1. Added a working add function.
+2. Added a subtract function.
+3. Introduced a bug by changing the add function to perform subtraction.
+4. Added an unrelated output message.
+After noticing the incorrect output, I used git bisect to identify which commit introduced the bug. Git successfully located the commit containing the faulty implementation.
+
+## Screenshots
+
+![git commits](Screenshots/commits.png)
+
+![git bisect](Screenshots/git-bisect.png)
+
+---
+
+# Advanced Git Commands
+
+## Goal
+
+Understand and experiment with advanced Git commands using your preferred Git desktop client.
+
+## Reflections
+
+### What does each command do?
+
+#### git checkout main --<file>
+This command returns a particular file from the main branch, without changing other files or changes in the repository. It can be helpful when a file has been modified incorrectly and is needed to be reverted back to a known good version.
+
+* Real-World Usage: In collaborative projects, developers often experiment with changes. If a particular file becomes problematic, it can be restored without discarding other work in progress.
+
+### git cherry-pick <commit>
+This command applies a specific commit from another branch onto the current branch without merging the entire branch
+
+* Real-World Usage: useful when only one bug fix or feature from another branch is needed. Instead of merging unrelated work, developers can selectively apply the required commit.
+
+#### git log
+This command displays commit history, including commit messages, authors, and 
+timestamps.
+
+* Real-World Usage: helps developers understand how a project evolved over time, locate important changes, investigate bugs, and review previous work.
+
+#### git blame <file>
+This command shows who last modified each line of a file and identifies the commit responsible for that change.
+
+* Real-World Usage: Git blame is commonly used during debugging to determine when a problematic line was introduced and who made the change. It provides valuable context when investigating issues.
+
+
+### What surprised you while testing these commands?
+
+As I went through these commands, I was amazed at the accuracy that Git can be. The checkout command can restore a single file without undoing other changes, cherry-pick can move individual commits between branches and git blame can tell you which exact commit added/removed a specific line of code. These are helpful tools in large projects to facilitate debugging and collaboration.
+
+## Screenshots
+
+### git checkout main --<file>
+![git checkout main --file](Screenshots/git-checkout-main-file.png)
+
+### git cherry-pick <commit>
+![git cherry pick-1](Screenshots/git-cherry-pick1.png)
+![git cherry pick-1](Screenshots/git-cherry-pick2.png)
+
+### git log
+![git log](Screenshots/git-log.png)
+![git log --oneline](Screenshots/git-log-oneline.png)
+
+### git blame
+![git blame](Screenshots/git-blame.png)
