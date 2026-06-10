@@ -271,3 +271,32 @@ When two developers are working on different branches and changing the same file
 ![git branching ](Screenshots/branching.png)
 
 ---
+
+# Staging vs Committing
+
+## Goals
+
+Understand the difference between staging and committing in Git by experimenting in your own repository.
+
+## Reflections
+
+### What is the difference between staging and committing?
+
+A staging area is where specific changes are selected to be part of the next commit. If a file is staged with git add, then those changes will be added to the staging area but will not be permanently added to the history of the repository.
+
+Commit means to save the staged changes as a snapshot in the history of the repository. Commit: It adds a permanent record of the changes you have made to the collection and a commit message explaining what you've done.
+
+### Why does Git separate these two steps?
+
+git makes a distinction between staging and committing, and allows developers to have more control over what is included within each commit. While developing, the developer may make multiple unrelated changes, but only wants to include only some of them in a specific commit. The staging area is a space where changes can be considered and collated prior to being documented.
+
+### When would you want to stage changes without committing?
+
+Staging without committing comes in handy when you're looking at changes, you're about to make a clean commit or want to stage related changes and not unrelated changes. For instance, if multiple files have been changed, but only some of these files are associated with a feature or bug fix, then only these files will be staged, while the other changes will remain unstaged for the next commit.
+
+## Screenshots
+
+![staging-vs-commiting](Screenshots/staging-vs-commiting.png)
+
+---
+
