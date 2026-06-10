@@ -242,3 +242,32 @@ As I went through these commands, I was amazed at the accuracy that Git can be. 
 
 ### git blame
 ![git blame](Screenshots/git-blame.png)
+
+---
+
+# Branching & Team Collaboration
+
+## Goal
+
+Understand the importance of branching, avoiding direct pushes to main, and following a structured review process.
+
+## Reflections
+
+### Why is pushing directly to main problematic?
+
+It is not advisable to push directly to the main branch, because it will cause the bugs, unfinished features, or broken codes to be directly present in the main version of the project. This can mess with other devs and cause instability in a team environment. It also prevents other people from being able to check out changes beforehand.
+
+### How do branches help with reviewing code?
+
+Branches are used to develop new features, fix bugs, or try out new ideas without disrupting the main branch. When it's done, the branch can be merged in a 'Pull Request' (PR), where the other members of the team review and suggest improvements to the code, as well as checking for correctness. This review process can keep the code at a top level of quality and minimise the risk of errors being introduced into the main branch.
+
+
+### What happens if two people edit the same file on different branches?
+
+When two developers are working on different branches and changing the same file, Git will try to merge two branches with each other. When the changes apply to multiple sections of the file, it's likely that Git will be able to merge them automatically. But in case both developers edit the same lines in the code, there will be a merge conflict. Conflict will be resolved manually using the script before the merge can be done – deciding which changes to keep.
+
+## Screenshot 
+
+![git branching ](Screenshots/branching.png)
+
+---
