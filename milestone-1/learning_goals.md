@@ -1,4 +1,4 @@
-# Issue Title
+# Learning goals
 
 **Issue Number:** #54
 **Milestone:** 1
