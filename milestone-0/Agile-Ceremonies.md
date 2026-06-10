@@ -1,4 +1,4 @@
-# Issue Title
+# Agile Ceremonies
 
 **Issue Number:** #9
 **Milestone:** 0
