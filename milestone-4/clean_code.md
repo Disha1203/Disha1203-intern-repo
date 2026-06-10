@@ -218,3 +218,99 @@ Refactoring improved readability by replacing vague names with descriptive ones.
 * This makes the code easier to maintain and reduces confusion during future development.
 
 ---
+
+#  Writing Small, Focused Functions
+
+## Goal
+Learn how to break down large functions into smaller, more maintainable units.
+
+## Best Practices
+* Follow the Single Responsibility Principle (SRP).
+* Keep functions short and focused.
+* Use descriptive function names.
+* Avoid deep nesting when possible.
+* Break complex logic into helper functions.
+* Make functions reusable.
+* Keep parameters to a reasonable number.
+* Ensure each function has a clear purpose.
+
+## Example
+
+### Original Code
+```
+def process_student_scores(scores):
+    total = 0
+    
+    for score in scores:
+        total += score
+
+    average = total / len(scores)
+
+    print("Average Score:", average)
+
+    if average >= 90:
+        grade = "A"
+    elif average >= 80:
+        grade = "B"
+    elif average >= 70:
+        grade = "C"
+    else:
+        grade = "F"
+
+    print("Final Grade:", grade)
+
+    if average < 70:
+        print("Student needs improvement.")
+    else:
+        print("Student passed.")
+
+```
+
+#### Problems
+The function is handling multiple responsibilities, making it harder to understand and modify.
+
+### Refactored Code
+```
+def calculate_average(scores):
+    return sum(scores) / len(scores)
+
+
+def determine_grade(average)
+    if average >= 90:
+        return "A"
+    elif average >= 80:
+        return "B"
+    elif average >= 70:
+        return "C"
+    else:
+        return "F"
+
+
+def evaluate_performance(average):
+    if average < 70:
+        return "Student needs improvement."
+    return "Student passed."
+
+
+def process_student_scores(scores)
+    average = calculate_average(scores)
+    grade = determine_grade(average)
+    performance = evaluate_performance(average)
+
+    print("Average Score:", average)
+    print("Final Grade:", grade)
+    print(performance)
+```
+
+## Reflections
+
+### Why is breaking down functions beneficial?
+
+* Breaking down functions improves readability, maintainability, and reusability.
+* Small functions are easier to understand because each one focuses on a single task. 
+* They are also easier to test and debug since problems can be isolated to specific parts of the code.
+### How did refactoring improve the structure of the code?
+
+* Refactoring separated the different responsibilities into dedicated functions.
+* Instead of one large function handling calculations, grading, and performance evaluation, each task now has its own function. 
+* This makes the code more organized, easier to modify, and simpler for other developers to understand.
