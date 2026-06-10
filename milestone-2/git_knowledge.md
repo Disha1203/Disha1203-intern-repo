@@ -1,4 +1,4 @@
-# Issue Title
+# Git knowledge
 
 **Issue Number:** #49
 **Milestone:** 2
