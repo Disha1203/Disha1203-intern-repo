@@ -40,9 +40,9 @@ Merge conflicts are typically part of collaborative software development and ver
 
 ![Branch creation](Screenshots/branch-creation.png)
 
-![Merge conflict error](Screenshots/merge-conflict.png)
+![Merge conflict error](Screenshots/merge-editor.png)
 
-![VS Code Merge Editor](Screenshots/merge-editor.png)
+![VS Code Merge Editor](Screenshots/resolve-conflict-editor.png)
 
 ![Commit after conflict resolution](Screenshots/resolved.png)
 
@@ -79,7 +79,7 @@ While reviewing an open-source PR, I observed that maintainers carefully examine
 ## Screenshots 
 
 ### PR Request and approval 
-![pr request](Screenshots/pr-approval.png)
+![pr request](Screenshots/pr-request.png)
 ![pr-approval](Screenshots/pr-approval.png)
 
 ### PR from open src
