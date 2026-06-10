@@ -1,4 +1,4 @@
-# Issue Title
+# Agile Principles
 
 **Issue Number:** #6
 **Milestone:** 0
