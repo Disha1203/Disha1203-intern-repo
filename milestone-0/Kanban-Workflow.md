@@ -1,4 +1,4 @@
-# Issue Title
+# Kanban Workflow
 
 **Issue Number:** #8
 **Milestone:** 0
