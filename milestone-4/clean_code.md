@@ -314,3 +314,54 @@ def process_student_scores(scores)
 * Refactoring separated the different responsibilities into dedicated functions.
 * Instead of one large function handling calculations, grading, and performance evaluation, each task now has its own function. 
 * This makes the code more organized, easier to modify, and simpler for other developers to understand.
+
+# Avoiding Code Duplication
+
+## Goal
+
+Understand how to identify and eliminate unnecessary duplication in code.
+
+## DRY Principle
+The principle states that every piece of knowledge or logic should exist in only one place within a codebase.
+
+Duplicated code increases maintenance effort because changes must be made in multiple locations. This can lead to inconsistencies and bugs if one copy is updated while others are forgotten.
+
+## Example
+
+### Origin code 
+```
+def calculate_student_discount(price): 
+    return price * 0.10 
+
+def calculate_teacher_discount(price):
+     return price * 0.10 
+     
+def calculate_senior_discount(price): 
+    return price * 0.10
+```
+#### Problems
+* The same discount calculation is repeated three times.
+* If the discount rate changes, all functions must be updated.
+* The duplicated logic increases maintenance effort.
+
+### Refactored version
+```
+def calculate_discount(price, discount_rate): 
+    return price * discount_rate 
+    
+student_discount = calculate_discount(100, 0.10) 
+teacher_discount = calculate_discount(100, 0.10) 
+senior_discount = calculate_discount(100, 0.10)
+
+```
+## Reflections
+
+### What were the issues with duplicated code?
+* Duplicated code increases the amount of code that must be maintained. 
+* When business requirements change, developers may need to update multiple locations, which increases the risk of introducing bugs. 
+* It also makes the codebase harder to understand because the same logic appears repeatedly.
+
+### How did refactoring improve maintainability?
+* Refactoring removed the repeated logic and placed it into a single reusable function. 
+* This reduced the amount of code, improved readability, and ensured that future changes only need to be made in one location. 
+* The code became easier to maintain and less prone to inconsistencies.
