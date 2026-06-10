@@ -1,4 +1,4 @@
-# Issue Title
+# AI Usage Guidelines
 
 **Issue Number:** #11
 **Milestone:** 0
