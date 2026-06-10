@@ -4,4 +4,5 @@ def add(a,b):
 def substract(a,b):
     return a-b
 
-add(2,3)
+print("Calculator")
+print(add(2,3))
