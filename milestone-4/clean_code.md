@@ -958,3 +958,42 @@ and inconsistent naming.
 * When each function does one thing and is named clearly, bugs are easier to locate because the problem can be traced to a specific, isolated unit.
 * Duplicate code means a bug appears in multiple places — eliminating duplication ensures a fix only needs to happen once. 
 * Named constants mean a misused value is immediately visible rather than hidden as a raw number.
+
+# Writing Unit Tests for Clean Code
+
+## Goal
+Learn how writing unit tests helps maintain clean and reliable code.
+
+## Framework Chosen
+PyTest (Python)
+
+## What I Did
+As part of a collaborative project (Online Donation Splitter), I wrote unit tests and integration tests using PyTest. The test suite covered routes like DB connection, donation history, donor dashboard, payment, profile, and admin causes. In total, 52 tests were written and run, achieving 69% code coverage.
+
+### Repository Reference
+
+The tests referenced in this reflection were written as part of a collaborative project hosted at:
+https://github.com/pestechnology/PESU_EC_CSE_C_P54_Online_Donation_Splitter_Devpool
+Relevant test files I authored:
+* `backend/tests/Unit_tests/test_db_connection.py`
+* `backend/tests/Unit_tests/test_donation_history.py`
+* `backend/tests/Unit_tests/test_donor_dashboard.py`
+* `backend/tests/Unit_tests/test_payment.py`
+* `backend/tests/Unit_tests/test_profile.py`
+
+![Test execution](Screenshots/test-execution.png)
+
+## Reflection
+
+### How Do Unit Tests Help Keep Code Clean?
+* Catch bugs early: While testing the DB connection route, I discovered that the monkeypatch target `app.main.get_db_connection` didn't match the actual `import path backend.app.db`, which meant the mock wasn't intercepting the function at all. The test failure immediately pointed to this.
+* Coverage reports highlight risky code: The coverage report revealed that `donation_routes.py` had 0% coverage and `donor_login.py` had only 24%, meaning those files could be modified without any safety net. This signals where the codebase needs more attention.
+* Encourages separation of concerns: Organizing tests into `Unit_tests/` and `Integration_tests/` folders made it clear which parts of the code were being tested in isolation vs end-to-end, making the codebase easier to navigate and maintain.
+* Acts as living documentation : Reading the tests gives a clear picture of what each function is supposed to do, without reading the implementation itself.
+
+
+### What Issues Did I Find While Testing?
+
+* Incorrect monkeypatch target : `test_testdb_route_failure` initially failed because the mock was patching the wrong import path. Fixing the target from `app.main.get_db_connection` to the correct path resolved the issue and the test passed.
+* Low coverage on key routes : `donor_login.py`, `register.py`, and `receipt_routes.py` had very low coverage (24%, 23%, and 17% respectively), indicating that login and registration flows were largely untested and potentially fragile.
+* Deprecated Flask config warning : `FLASK_ENV` was flagged as deprecated in Flask 2.3, which was caught during test runs and flagged for cleanup.
