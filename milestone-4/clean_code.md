@@ -997,3 +997,94 @@ Relevant test files I authored:
 * Incorrect monkeypatch target : `test_testdb_route_failure` initially failed because the mock was patching the wrong import path. Fixing the target from `app.main.get_db_connection` to the correct path resolved the issue and the test passed.
 * Low coverage on key routes : `donor_login.py`, `register.py`, and `receipt_routes.py` had very low coverage (24%, 23%, and 17% respectively), indicating that login and registration flows were largely untested and potentially fragile.
 * Deprecated Flask config warning : `FLASK_ENV` was flagged as deprecated in Flask 2.3, which was caught during test runs and flagged for cleanup.
+
+# Code Formatting & Style Guides
+
+## Goal 
+Understand the importance of code formatting and how to use tools like linters to enforce consistency.
+
+## Tools Used
+* ESLint with Airbnb style guide config
+* Prettier for auto-formatting
+* Language: JavaScript
+
+## Setup
+```bash
+npm install --save-dev eslint prettier eslint-config-airbnb-base eslint-plugin-import
+```
+Config files created: `.eslintrc.json` (Airbnb base rules) and `.prettierrc` (single quotes, 2 space tabs)
+
+## Code Formatting
+```bash
+ravi@Disha-2 milestone-4 % npx eslint test.js                                                                   
+
+/Users/ravi/Desktop/internship/Disha1203-intern-repo/milestone-4/test.js
+   2:15  error  A space is required after ','                                                                          comma-spacing
+   2:22  error  Unexpected block statement surrounding arrow body; move the returned value immediately after the `=>`  arrow-body-style
+   3:1   error  Expected indentation of 2 spaces but found 4                                                           indent
+   3:13  error  Operator '+' must be spaced                                                                            space-infix-ops
+   3:15  error  Missing semicolon                                                                                      semi
+   4:2   error  Missing semicolon                                                                                      semi
+   6:18  error  A space is required after ','                                                                          comma-spacing
+   7:1   error  Expected space(s) after "if"                                                                           keyword-spacing
+   7:1   error  Expected indentation of 2 spaces but found 0                                                           indent
+   7:5   error  Operator '===' must be spaced                                                                          space-infix-ops
+   7:10  error  Missing space before opening brace                                                                     space-before-blocks
+   8:1   error  Expected indentation of 4 spaces but found 0                                                           indent
+   8:41  error  Missing semicolon                                                                                      semi
+   9:1   error  Expected indentation of 2 spaces but found 0                                                           indent
+  10:1   error  Expected indentation of 2 spaces but found 0                                                           indent
+  10:9   error  Operator '/' must be spaced                                                                            space-infix-ops
+  10:11  error  Missing semicolon                                                                                      semi
+  11:2   error  Missing semicolon                                                                                      semi
+  13:1   error  Unexpected var, use let or const instead                                                               no-var
+  13:18  error  A space is required after ','                                                                          comma-spacing
+  13:25  error  Unexpected block statement surrounding arrow body; move the returned value immediately after the `=>`  arrow-body-style
+  14:1   error  Expected indentation of 2 spaces but found 4                                                           indent
+  14:13  error  Operator '*' must be spaced                                                                            space-infix-ops
+  14:15  error  Missing semicolon                                                                                      semi
+  15:2   error  Missing semicolon                                                                                      semi
+  17:18  error  A space is required after '{'                                                                          object-curly-spacing
+  17:40  error  A space is required before '}'                                                                         object-curly-spacing
+  17:41  error  Newline required at end of file but not found                                                          eol-last
+  17:41  error  Missing semicolon                                                                                      semi
+
+✖ 29 problems (29 errors, 0 warnings)
+  29 errors and 0 warnings potentially fixable with the `--fix` option.
+
+ravi@Disha-2 milestone-4 % npx prettier --write test.js 
+test.js 45ms
+ravi@Disha-2 milestone-4 % npx eslint test.js --fix 
+```
+
+## Reflection
+
+### Why Is Code Formatting Important?
+
+* Consistency across teams — when multiple developers work on the same codebase, formatting rules ensure everyone writes code that looks the same, reducing friction during code reviews
+* Catches bad practices early — ESLint flagged the use of var instead of const/let, which is a real JavaScript best practice, not just a style preference
+* Reduces cognitive load — inconsistent indentation and missing spaces around operators make code harder to parse mentally, even if it runs correctly
+* Automation saves time — Prettier fixed formatting issues instantly with one command, meaning developers don't waste time manually fixing spaces and semicolons
+
+
+### What Issues Did the Linter Detect?
+Running `npx eslint test.js` on the codebase revealed 29 errors, including:
+* Missing semicolons — multiple lines were missing statement terminators
+* Incorrect indentation — expected 2 spaces but found 4 in several places, and 0 in others
+* Missing spaces around operators — `+`, `/`, `*`, `===` all flagged for readability
+* Use of `var` — ESLint enforced the Airbnb rule of using const or let instead
+* Missing spaces after commas and inside object curly braces
+* Unnecessary block statements in arrow functions — `() => { return x }` should be `() => x`
+* No newline at end of file
+
+```bash
+npx prettier --write test.js
+npx eslint test.js --fix
+```
+All 29 errors were resolved and the final npx eslint test.js returned no issues.
+
+
+### Did Formatting the Code Make It Easier to Read?
+Yes, significantly. Before formatting the code had inconsistent indentation, missing spacing around operators, and unclear arrow function bodies. After Prettier and ESLint fixed the issues, the code was visually uniform and each function's intent was immediately clear. It also highlighted that `var` was being used, which is a subtle but important issue in modern JavaScript that could cause scope-related bugs.
+
+
