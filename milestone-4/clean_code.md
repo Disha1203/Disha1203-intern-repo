@@ -872,3 +872,89 @@ process_students(students)
   without doing any calculations itself.
 * `f-strings` replaced messy string concatenation.
 * Any single function can now be tested, modified, or reused independently.
+
+# Identifying & Fixing Code Smells
+
+## Goal
+
+Learn how to recognize common code smells and refactor them for better readability, maintainability, and performance.
+
+## Code Smells Found and Refactored
+
+### 1. Magic Numbers & Strings
+**Problem:** Hardcoded values like `0.10`, `0.20`, `"student"` scattered
+throughout the code make it unclear what they represent and hard to update.
+
+**Fix:** Replaced with a named constant `DISCOUNT_RATES` dictionary.
+Changing a discount rate now requires editing one place only.
+
+
+### 2. Long Functions
+**Problem:** `process_order` handled validation, calculation, discounting,
+tax, and printing — five responsibilities in one function. It was hard to
+read and impossible to test individual steps.
+
+**Fix:** Extracted into focused helpers: `validate_order`,
+`calculate_order_subtotal`, `apply_customer_discount`, `apply_tax`,
+and `print_receipt`. Each does exactly one thing.
+
+
+### 3. Duplicate Code
+**Problem:** `print_math_result`, `print_science_result`, and
+`print_english_result` contained identical logic copy-pasted three times.
+A bug fix or change needed to be applied in all three places.
+
+**Fix:** Extracted shared logic into `calculate_average`, `determine_grade`,
+and a single `print_subject_result(subject, scores)` function.
+
+
+### 4. Large Class (God Object)
+**Problem:** The `School` class managed students, teachers, courses, fees,
+and report cards. It had too many responsibilities and would grow endlessly
+as the project expanded.
+
+**Fix:** Split into `StudentManager`, `TeacherManager`, `FeeManager`, and
+`ReportManager`. Each class has a single clear responsibility.
+
+
+### 5. Deeply Nested Conditionals
+**Problem:** `get_student_status` had 6 levels of nesting. Following the
+logic required tracking every indentation level to understand the flow.
+
+**Fix:** Replaced with guard clauses that exit early on invalid conditions.
+The main logic now sits at the top level with no nesting.
+
+
+### 6. Commented-Out Code
+**Problem:** `calculate_final_score` contained large blocks of old code
+in comments. This clutters the file and confuses developers about whether
+the code is still needed.
+
+**Fix:** Deleted all commented-out code. Version control (Git) preserves
+history, so old code is never truly lost.
+
+
+### 7. Inconsistent Naming
+**Problem:** `Calc`, `Res`, `AVG`, `itm`, `disc`, `FinalVal` — a mix of
+capitalisation styles, abbreviations, and vague names that gave no clue
+about their purpose.
+
+**Fix:** Renamed to `calculate_discounted_average`, `average`,
+`discount_rate`, `discounted` — consistent snake_case throughout.
+
+
+## Reflections
+
+### What code smells did you find in your code?
+All seven smells were present: magic numbers, a long function, duplicate logic, a god object class, deeply nested conditionals, commented-out code,
+and inconsistent naming.
+
+### How did refactoring improve readability and maintainability?
+* Each refactored function and class now has a single responsibility with a descriptive name. 
+* A developer reading the code for the first time can understand what each part does without tracing through the entire file.
+* Changes to one part of the system no longer risk breaking unrelated parts.
+
+### How can avoiding code smells make future debugging easier?
+* When each function does one thing and is named clearly, bugs are easier to locate because the problem can be traced to a specific, isolated unit.
+* Duplicate code means a bug appears in multiple places — eliminating duplication ensures a fix only needs to happen once. 
+* Named constants mean a misused value is immediately visible rather than hidden as a raw number.
