@@ -35,6 +35,7 @@ Understand the purpose of Continuous Integration (CI) and Continuous Deployment 
 
 ## Screenshots
 
-![Alt text](image-1.png)
+![Spelling error in CI/CD Check](Screenshots/incorrect-workflow.png)
+![More info about the spelling error](Screenshots/incorrect-workflow.png)
+![When workflow is correct](Screenshots/Correct-workflow.png)
 
-This is a delibrately misspelled word.
