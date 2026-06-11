@@ -6,7 +6,7 @@
 
 ---
 
-## Relections
+## Reflections
 
 ### What is my role? How does it contribute to the Agile process?
 
@@ -40,6 +40,7 @@
 ## What I Learned
 
 I discovered that collaboration is the essence of Agile teams and not the individual. The various roles bring in their respective skills and the communication between the roles facilitates smooth and efficient working.
+
 ---
 
 

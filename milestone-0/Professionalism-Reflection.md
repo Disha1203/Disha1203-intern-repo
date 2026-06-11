@@ -12,16 +12,16 @@ Understand professional expectations at Focus Bear and how to communicate effect
 
 ---
 
-## Relections
+## Reflections
 
 ### Have You Ever Experienced Great Teamwork and Professionalism?
 
-I have experienced  greate teamwork and professionalism.
+I have experienced  great teamwork and professionalism.
 What made it effective was that:
-* Everyone was accountable for their responsiblities
+* Everyone was accountable for their responsibilities
 * We worked towards solving together rather than assigning the blame
 * We shared progress regularly 
-* Helped eachother whenever the other members had any doubts or issues that they couldn't solve
+* Helped each other whenever the other members had any doubts or issues that they couldn't solve
 
 ### Steps taken to Ensure My Communication Is Clear, Respectful, and Inclusive
 
@@ -34,18 +34,18 @@ What made it effective was that:
 
 1. Treating everyone with kindness and respect
 2. Being approachable and willing to help
-3. By encouraging collabration and celebrating team achievements
+3. By encouraging collaboration and celebrating team achievements
 
 ### How to Prepare Effectively for Meetings
 
-1. Review project breif and reasearch on Focus Bear 
-2. Prepare updates on completed work, current progree and blockers
+1. Review project brief and research on Focus Bear 
+2. Prepare updates on completed work, current progress and blockers
 3. Create list of questions and discussion points
 
 ### What Being Proactive Looks Like During My Internship
 
 1. Give regular updates 
-2. If stuck search online ask your teamate or reach out to your supervisor if still blocked
+2. If stuck search online ask your teammate or reach out to your supervisor if still blocked
 
 ### Following Up and Escalating Communication
 
@@ -60,8 +60,8 @@ If I do not receive a response within a reasonable timeframe, I would send a pol
 
 ### Things I Won't Do
 
-1. Waiting for instructions : if unsure i'll explre or ask a teammate
-2. Comming to meeting unprepared : I'll read the breif and bring up questions or blockers
+1. Waiting for instructions : if unsure i'll explore or ask a teammate
+2. Coming to meeting unprepared : I'll read the brief and bring up questions or blockers
 3. Not taking notes
 4. Ignoring feedback or action items
 5. Relying only on one form of communication: I'll escalate if it's urgent

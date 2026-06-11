@@ -20,7 +20,7 @@
 * I struggle when:
     * When the task is vague
     * Focus too much on the details before prioritizing on bigger chunks
-    * I go down rabbit holes and spent more time than neccessary
+    * I go down rabbit holes and spent more time than necessary
     * Communication is lacking on collaborative tasks
 
 ## Communication Style
@@ -34,13 +34,13 @@
     * Email for non-urgent matters and documentation.
 * If you need something urgent, do this
     * Send me a WhatsApp msg
-    * if the matter is time sensitve , call me directly
+    * if the matter is time sensitive , call me directly
 
 ## Collaboration & Teamwork
 
 * I work best in a team when
     * Communication is open and transparent
-    * Team members are respectfut and supportive
+    * Team members are respectful and supportive
     * Progress and blockers are communicated early.
 * My biggest pet peeve in teamwork is
     * Teammates going silent without providing updates
@@ -75,7 +75,7 @@
 * I appreciate it when teammates...
     * Communicate openly
     * Share knowledge and ideas without hesitations
-    * Challenge approaches respectifully
+    * Challenge approaches respectfully
 
 ## Fun Facts & Quirks
 

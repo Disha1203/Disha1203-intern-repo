@@ -117,7 +117,7 @@ A new user may not realize additional content exists.
 
 
 
-## Observation 6 : Incompleted Eisenhower matrix
+## Observation 6 : Incomplete Eisenhower matrix
 
 ### What happened?
 

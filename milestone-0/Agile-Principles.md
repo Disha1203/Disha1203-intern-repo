@@ -6,7 +6,7 @@
 
 ---
 
-## Relections
+## Reflections
 
 ### Biggest Benefits and Challenges of Agile
 
@@ -21,16 +21,17 @@
 * Sometimes, it can be hard to deal with shifting priorities.
 * Team members must keep tasks up to date and communicate blockers.
 
-### How Agile Principles Can Help in My Role
+### How Agile Principles Can Help in My Role?
 
 Agile helps me stay organized, communicate clearly on progress, adjust to priorities as they shift, and learn and grow through feedback. They also push me to raise blockers in a timely manner and work well with my teammates.
+
 ---
 
 ## Tasks
 
 ### Main differences between Scrum and Kanban
 | Aspect | Scrum | Kanban |
-|---------|---------|---------|
+| --- | --- | --- |
 | Work Structure | Work completed in fixed-length sprints. | Work flows continuously through a board. |
 | Planning | Sprint planning, reviews, and retrospectives are required. | Priorities can change at any time without fixed sprint planning. |
 | Commitment | Team members commit to a set amount of work during a sprint. | Work is pulled as capacity becomes available. |

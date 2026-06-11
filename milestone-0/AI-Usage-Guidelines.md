@@ -11,14 +11,14 @@ Understand how to responsibly and effectively use AI tools while maintaining dat
 
 ---
 
-## Relections
+## Reflections
 
 ### When Should AI Be Used?
 AI should be used as a tool for:
 * Initial research
 * Planing your tasks and prioritize them
 * Automating repeated work
-* Degugging and documentation 
+* Debugging and documentation 
 * Unit testing 
 ### When Should I Rely on My Own Skills?
 * Technical decisions 

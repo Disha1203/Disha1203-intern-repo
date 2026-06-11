@@ -1,0 +1,27 @@
+{
+  "name": "disha1203-intern-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Disha1203/Disha1203-intern-repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Disha1203/Disha1203-intern-repo/issues"
+  },
+  "homepage": "https://github.com/Disha1203/Disha1203-intern-repo#readme",
+  "devDependencies": {
+    "cspell": "^9.6.0",
+    "eslint": "^9.39.4",
+    "husky": "^9.1.7",
+    "markdownlint-cli": "^0.48.0"
+  }
+}

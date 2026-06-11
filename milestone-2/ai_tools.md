@@ -19,7 +19,7 @@ Enhance your coding workflow by exploring AI-powered tools that assist with deve
 ### Experiment with using AI for development
 ![Generate code snippets](screenshots/Snippet.png)
 ![Debugging](screenshots/Debugging.png)
-![Explainations](screenshots/Explanations.png)
+![Explanations](screenshots/Explanations.png)
 
 ### Analysis of Generated Code
 

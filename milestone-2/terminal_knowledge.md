@@ -12,7 +12,7 @@ A good terminal setup makes development smoother. Choose a terminal client and g
 
 ---
 
-## Relections
+## Reflections
 
 ### Which terminal client did you choose? Why?
 
@@ -27,7 +27,7 @@ A good terminal setup makes development smoother. Choose a terminal client and g
 
 ### What was the most useful command you learned today?
 
-`source ~/.zshrc `
+`source ~/.zshrc`
 *  It lets me load my shell setup right after I've made changes to aliases, plugins or environment variables without having to restart the terminal. 
 * This simplified and sped up zsh configuration.
 

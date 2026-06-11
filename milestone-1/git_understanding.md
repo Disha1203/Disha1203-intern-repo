@@ -54,7 +54,7 @@ Merge conflicts are typically part of collaborative software development and ver
 
 Learn how to create, review, and collaborate on Pull Requests (PRs) in GitHub.
 
-## Relections
+## Reflections
 
 ### Why are PRs important in a team workflow?
 
@@ -155,8 +155,8 @@ Learn how to use git bisect to identify which commit introduced a bug in a proje
 
 ### What does git bisect do?
 
-It's a debugging tool that uses binary search to find the commit that introducted a bug
-* By marking known good and bad commit, git checks commits in the middle of the range and narrows down the serach until the problematic commit is found
+It's a debugging tool that uses binary search to find the commit that introduced a bug
+* By marking known good and bad commit, git checks commits in the middle of the range and narrows down the search until the problematic commit is found
 
 ### When would you use it in a real-world debugging situation?
 
@@ -165,7 +165,7 @@ Used when:
 * debugging application crashes
 * failing tests
 * performance regressions
-* unexpected behaviour occured during development
+* unexpected behaviour occurred during development
 
 ### How does it compare to manually reviewing commits?
 
@@ -296,7 +296,7 @@ Staging without committing comes in handy when you're looking at changes, you're
 
 ## Screenshots
 
-![staging-vs-commiting](Screenshots/staging-vs-commiting.png)
+![staging-vs-committing](Screenshots/staging-vs-committing.png)
 
 ---
 

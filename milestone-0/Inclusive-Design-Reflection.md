@@ -1,4 +1,4 @@
-# Inclusive Desing
+# Inclusive Design
 
 **Issue Number:** #13
 **Milestone:** 0
@@ -12,14 +12,14 @@ Understand how to interact respectfully and responsibly when working with or des
 
 ---
 
-## Relections
+## Reflections
 
 ### How Can I Adjust My Communication Style?
 
 Being more inclusive by:
 1. Being clear, direct and respectful
-2. Avoiding vague instructions and providind context when assigning tasks
-3. Ensureing that expectations are communicated clearly
+2. Avoiding vague instructions and providing context when assigning tasks
+3. Ensuring that expectations are communicated clearly
 4. Being patient while discussing complex topics
 5. Understanding that everyone has a different way to process info
 
@@ -43,7 +43,7 @@ Being more inclusive by:
 
 ### First-Person Account
 
-As a person having ADHD, I haved used quite a few productivity tools that help with focus, time and tasks completed. In my experience, I've seen that there are a few recurring issues:
+As a person having ADHD, I have used quite a few productivity tools that help with focus, time and tasks completed. In my experience, I've seen that there are a few recurring issues:
 * There are too many features, settings or notifications in many productivity apps making them overwhelming. 
     * I tend to ignore notifications once it's been a while.
 * Most of the productivity tools appear to be aimed at the user in his prime. 

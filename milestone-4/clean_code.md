@@ -5,7 +5,7 @@ Understand the core principles of clean code and why they matter in real-world d
 
 ## Principles 
 
-### Simplcity
+### Simplicity
 Keeping code as straightforward as possible
 It's easier to 
 * understand 
@@ -219,7 +219,7 @@ Refactoring improved readability by replacing vague names with descriptive ones.
 
 ---
 
-#  Writing Small, Focused Functions
+# Writing Small, Focused Functions
 
 ## Goal
 Learn how to break down large functions into smaller, more maintainable units.
@@ -973,7 +973,7 @@ As part of a collaborative project (Online Donation Splitter), I wrote unit test
 ### Repository Reference
 
 The tests referenced in this reflection were written as part of a collaborative project hosted at:
-https://github.com/pestechnology/PESU_EC_CSE_C_P54_Online_Donation_Splitter_Devpool
+[Repository](https://github.com/pestechnology/PESU_EC_CSE_C_P54_Online_Donation_Splitter_Devpool)
 Relevant test files I authored:
 * `backend/tests/Unit_tests/test_db_connection.py`
 * `backend/tests/Unit_tests/test_donation_history.py`

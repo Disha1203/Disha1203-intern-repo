@@ -24,7 +24,7 @@ The skills that I am looking forward to learning are:
 * DevOps and deployment workflows
 * Secure coding practices
 * To design and optimize database.
-* Understanding and debuging large codebases
+* Understanding and debugging large codebases
 * Performance optimization
 
 Security is an area that particularly interests me because I believe the backend forms the foundation of application security. I want to learn how to design and implement systems that are both functional and secure.
@@ -55,7 +55,7 @@ I also want to learn how to identify performance bottlenecks and optimize system
 
 Success for me would mean:
 * Contributing meaningful features to a real product
-* Being comfortable to worki on a productive level codebase
+* Being comfortable to work on a productive level codebase
 * Learning industry-standard development practices
 * Improving my backend engineering skills
 * Learning how to identify and mitigate common security vulnerabilities such as authentication flaws, insecure data handling, and API security risks

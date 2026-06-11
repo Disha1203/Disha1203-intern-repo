@@ -12,7 +12,7 @@ Learn how to use modern AI-assisted development tools responsibly and effectivel
 
 ---
 
-## Relections
+## Reflections
 
 ### Which tool you used
 I used Cursor AI

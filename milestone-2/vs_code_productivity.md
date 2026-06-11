@@ -16,8 +16,8 @@
 
 ### Editing 
 
-* ` ⌘+D` : Select Multiple Occurrences Of The Same Word
-* ` ⌘+/` : Toggle line comment
+* `⌘+D` : Select Multiple Occurrences Of The Same Word
+* `⌘+/` : Toggle line comment
 * `⌥ + Click` : Multiple cursors
 * `⌥ + ⌘ + ↑ / ↓` : Insert cursor above/below
 
@@ -34,7 +34,7 @@
 * `⌘ + K` : Clear Terminal
 
 ---
-## Relections
+## Reflections
 
 ### Which shortcuts do you think will be the most useful in your daily work?
 

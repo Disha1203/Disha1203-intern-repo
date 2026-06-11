@@ -21,14 +21,14 @@ To offer a holistic productivity solution by offering distraction blocking, habi
 ### Why do you think Focus Bear was created?
 
 Focus bear was created to help neurodivergent individuals to manage their routine and time well.
-* It was created since most apps aren't well suited for neurdivergent individuals 
-* Since the founders experenced similar challenges , the team build it to actively guide users through routines and block distractions
+* It was created since most apps aren't well suited for neurodivergent individuals 
+* Since the founders experienced similar challenges , the team build it to actively guide users through routines and block distractions
 
 ### What problem is Focus Bear solving?
 
 It aims to solve issues neurodivergent individuals come across such as 
 * executive dysfunction
-* hyberfocus (tend to ignore taking breaks , sleep)
+* hyperfocus (tend to ignore taking breaks , sleep)
 * decision fatigue
 * maintaining routines 
 * distractions 
@@ -36,7 +36,7 @@ It aims to solve issues neurodivergent individuals come across such as
 ### Why do you think this mission is important?
 
 It's important since screen time has increased for most since distraction is more accessible than ever.
-* Social media, gaming , messaging platforms and endless onlines content constantly compete for attention
+* Social media, gaming , messaging platforms and endless online content constantly compete for attention
 * Though these affect everyone, it can be especially difficult or people with ADHD and other neurodivergent conditions.
 
 Thus healthy routines and focus has a great impact on the overall quality of life.
@@ -47,7 +47,7 @@ Thus healthy routines and focus has a great impact on the overall quality of lif
 
 Focus Bear's work aligns strongly with my interests in technology, productivity, and problem solving.
 
-* I belive that a productivity app should be able to help the user even during their worse times, especially when the smallest tasks seem impossible
+* I believe that a productivity app should be able to help the user even during their worse times, especially when the smallest tasks seem impossible
 * Setting even a simple routine can help individuals to have structure and consistency in their life 
 * Focus bear helps individuals to take small steps to improve where everything seems overwhelming or impossible to start
 

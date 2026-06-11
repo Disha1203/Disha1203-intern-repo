@@ -42,7 +42,7 @@ I use Git in VS Code since it provides a built-in git integration as well as mak
 ### What was the most interesting thing you learned about Git today?
 The branch is just a pointer to a commit rather than separate copies of code
 * Thus making branch creation nearly instantaneous
-* Allows devs to create and switch between branches effieciently
+* Allows devs to create and switch between branches efficiently
 * Helps git remain fast for large repos as well
 
 ---

@@ -6,17 +6,17 @@
 
 ---
 
-## Relections
+## Reflections
 
 ### How does Kanban help manage priorities and avoid overload?
 
 * Provides clear view of the task and their current status
-* Limits work in progress so the team can focus on completing current tasks before startign new ones
+* Limits work in progress so the team can focus on completing current tasks before starting new ones
 * Thus prevents overload and improves prioritization
 
 ### How can you improve your workflow using Kanban principles?
 
-* Limiting the number of tasks to work on makes sure that I'm not overwhlemed
+* Limiting the number of tasks to work on makes sure that I'm not overwhelmed
 * Uploading task statues regularly 
 * Prioritizing high-impact tasks before starting lower-priority work.
 ---

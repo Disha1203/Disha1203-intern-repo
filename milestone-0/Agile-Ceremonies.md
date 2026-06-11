@@ -5,12 +5,12 @@
 **Date Completed:**4/6/26
 
 
-## Relections
+## Reflections
 
 ### How do Agile ceremonies help with communication and alignment?
 
 * Allows team members to share progress , blockers and clarify priorities
-* This reducues misunderstandings
+* This reduces misunderstandings
 * Keeps everyone informed about its progress
 * Ensures that the team is aligned on common goals
 
