@@ -4,17 +4,11 @@ scores = {
     'english': 61
 }
 
-def get_letter_grade(score):
-    if score >= 90:
-        return "A"
-    elif score >= 70:
-        return "B"
-    else:
-        return "F"
+def calculate_average(numbers):
+    total = sum(numbers)
+    return total / len(numbers)
 
-def print_subject_grades(scores):
-    for subject, score in scores.items():
-        grade = get_letter_grade(score)
-        print(f"{subject.capitalize()}: {grade}")
-
-print_subject_grades(scores)
+# These will crash without proper error handling
+print(calculate_average([85, 90, 78]))   # Works fine
+print(calculate_average([]))             # ZeroDivisionError
+print(calculate_average(None))           # TypeError
