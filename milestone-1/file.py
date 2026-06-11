@@ -6,32 +6,56 @@ students = [
     {"name": "Eve", "scores": [40, 45, 38]},
 ]
 
-def process(s):
-    r = []
-    for x in s:
-        t = 0
-        for n in x["scores"]:
-            t += n
-        a = t / len(x["scores"])
-        if a >= 90:
-            g = "A"
-        elif a >= 80:
-            g = "B"
-        elif a >= 70:
-            g = "C"
-        elif a >= 60:
-            g = "D"
-        else:
-            g = "F"
-        if g == "F":
-            st = "Fail"
-        else:
-            st = "Pass"
-        r.append({"name": x["name"], "average": a, "grade": g, "status": st})
-    return r
 
-def show(r):
-    for x in r:
-        print(x["name"] + " | Avg: " + str(round(x["average"], 2)) + " | Grade: " + x["grade"] + " | " + x["status"])
+def calculate_average(scores):
+    return sum(scores) / len(scores)
 
-show(process(students))
+
+def determine_grade(average):
+    if average >= 90:
+        return "A"
+    elif average >= 80:
+        return "B"
+    elif average >= 70:
+        return "C"
+    elif average >= 60:
+        return "D"
+    else:
+        return "F"
+
+
+def determine_status(grade):
+    if grade == "F":
+        return "Fail"
+    return "Pass"
+
+
+def build_student_result(student):
+    average = calculate_average(student["scores"])
+    grade = determine_grade(average)
+    status = determine_status(grade)
+
+    return {
+        "name": student["name"],
+        "average": average,
+        "grade": grade,
+        "status": status
+    }
+
+
+def print_result(result):
+    print(
+        f"{result['name']} | "
+        f"Avg: {result['average']:.2f} | "
+        f"Grade: {result['grade']} | "
+        f"{result['status']}"
+    )
+
+
+def process_students(students):
+    for student in students:
+        result = build_student_result(student)
+        print_result(result)
+
+
+process_students(students)
