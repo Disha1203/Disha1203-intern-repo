@@ -727,3 +727,148 @@ The original function assumed that valid input would always be provided. It did 
 Error handling makes software more robust by preventing unexpected failures and providing meaningful feedback when something goes wrong. By validating inputs and handling edge cases, developers can ensure that functions behave predictably even when they receive invalid or unexpected data.
 
 ---
+
+# Refactoring Code for Simplicity
+
+## Goal
+Learn how to simplify complex or overly engineered code without losing functionality.
+
+## Common Refactoring Techniques
+
+* **Extract Function** — move a block of logic into its own named function
+* **Rename Variables** — replace vague names with descriptive ones
+* **Replace Nested Conditionals with Guard Clauses** — flatten deep nesting
+* **Remove Dead Code** — delete unused variables and functions
+* **Consolidate Duplicate Logic** — combine repeated patterns into one place
+* **Single Responsibility** — ensure each function does exactly one thing
+
+## Example
+
+### Original Code
+```python
+students = [
+    {"name": "Alice", "scores": [92, 88, 95]},
+    {"name": "Bob", "scores": [60, 55, 58]},
+    {"name": "Carol", "scores": [78, 82, 74]},
+    {"name": "David", "scores": [95, 98, 100]},
+    {"name": "Eve", "scores": [40, 45, 38]},
+]
+
+def process(s):
+    r = []
+    for x in s:
+        t = 0
+        for n in x["scores"]:
+            t += n
+        a = t / len(x["scores"])
+        if a >= 90:
+            g = "A"
+        elif a >= 80:
+            g = "B"
+        elif a >= 70:
+            g = "C"
+        elif a >= 60:
+            g = "D"
+        else:
+            g = "F"
+        if g == "F":
+            st = "Fail"
+        else:
+            st = "Pass"
+        r.append({"name": x["name"], "average": a, "grade": g, "status": st})
+    return r
+
+def show(r):
+    for x in r:
+        print(x["name"] + " | Avg: " + str(round(x["average"], 2)) + " | Grade: " + x["grade"] + " | " + x["status"])
+
+show(process(students))
+```
+
+### Refactored code
+```python
+students = [
+    {"name": "Alice", "scores": [92, 88, 95]},
+    {"name": "Bob", "scores": [60, 55, 58]},
+    {"name": "Carol", "scores": [78, 82, 74]},
+    {"name": "David", "scores": [95, 98, 100]},
+    {"name": "Eve", "scores": [40, 45, 38]},
+]
+
+
+def calculate_average(scores):
+    return sum(scores) / len(scores)
+
+
+def determine_grade(average):
+    if average >= 90:
+        return "A"
+    elif average >= 80:
+        return "B"
+    elif average >= 70:
+        return "C"
+    elif average >= 60:
+        return "D"
+    else:
+        return "F"
+
+
+def determine_status(grade):
+    if grade == "F":
+        return "Fail"
+    return "Pass"
+
+
+def build_student_result(student):
+    average = calculate_average(student["scores"])
+    grade = determine_grade(average)
+    status = determine_status(grade)
+
+    return {
+        "name": student["name"],
+        "average": average,
+        "grade": grade,
+        "status": status
+    }
+
+
+def print_result(result):
+    print(
+        f"{result['name']} | "
+        f"Avg: {result['average']:.2f} | "
+        f"Grade: {result['grade']} | "
+        f"{result['status']}"
+    )
+
+
+def process_students(students):
+    for student in students:
+        result = build_student_result(student)
+        print_result(result)
+
+
+process_students(students)
+```
+## Refactored code in repo
+![Refactored code in repo](Screenshots/Refactoring-Code.png)
+## Reflections
+
+### What made the original code complex?
+
+* Function and variable names like `process`, `show`, `r`, `x`, `t`, `a`, `g`, `st`
+  gave no indication of their purpose.
+* A single function handled calculating averages, assigning grades,
+  determining pass/fail status, and collecting results — all at once.
+* Manual loops replaced built-in functions like `sum()`.
+* String concatenation made the print output harder to read.
+* Reading the code required tracing every variable to understand what was happening.
+
+### How did refactoring improve it?
+
+* Each responsibility was extracted into its own clearly named function:
+  `calculate_average`, `determine_grade`, `determine_status`, `print_result`.
+* Descriptive names make the code self-documenting — no comments needed.
+* `build_student_result` acts as a clean coordinator, combining results
+  without doing any calculations itself.
+* `f-strings` replaced messy string concatenation.
+* Any single function can now be tested, modified, or reused independently.
