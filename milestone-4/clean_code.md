@@ -237,69 +237,65 @@ Learn how to break down large functions into smaller, more maintainable units.
 ## Example
 
 ### Original Code
+I wrote this function myself while practicing a user authentication flow scenario. It simulates code I've seen in beginner projects.
 ```python
-def process_student_scores(scores):
-    total = 0
-    
-    for score in scores:
-        total += score
-
-    average = total / len(scores)
-
-    print("Average Score:", average)
-
-    if average >= 90:
-        grade = "A"
-    elif average >= 80:
-        grade = "B"
-    elif average >= 70:
-        grade = "C"
-    else:
-        grade = "F"
-
-    print("Final Grade:", grade)
-
-    if average < 70:
-        print("Student needs improvement.")
-    else:
-        print("Student passed.")
+def handle_user_login(username, password, users_db):
+    u = None
+    for user in users_db:
+        if user['username'] == username:
+            u = user
+            break
+    if u is None:
+        print("Error: user not found")
+        return False
+    h = hashlib.sha256(password.encode()).hexdigest()
+    if h != u['password_hash']:
+        print("Error: wrong password")
+        return False
+    if u['is_banned']:
+        print("Error: account banned")
+        return False
+    token = str(uuid.uuid4())
+    u['session_token'] = token
+    u['last_login'] = datetime.now().isoformat()
+    print("Login successful. Token:", token)
+    return token
 
 ```
 
-#### Problems
-The function is handling multiple responsibilities, making it harder to understand and modify.
+#### Problem
+ This single function finds a user, validates a password, checks account status, creates a session, and updates login metadata .Five distinct responsibilities crammed together.
 
 ### Refactored Code
 ```python
-def calculate_average(scores):
-    return sum(scores) / len(scores)
+def find_user_by_username(username, users_db):
+    for user in users_db:
+        if user['username'] == username:
+            return user
+    return None
 
+def is_password_valid(password, stored_hash):
+    return hashlib.sha256(password.encode()).hexdigest() == stored_hash
 
-def determine_grade(average)
-    if average >= 90:
-        return "A"
-    elif average >= 80:
-        return "B"
-    elif average >= 70:
-        return "C"
-    else:
-        return "F"
+def create_session(user):
+    user['session_token'] = str(uuid.uuid4())
+    user['last_login'] = datetime.now().isoformat()
+    return user['session_token']
 
-
-def evaluate_performance(average):
-    if average < 70:
-        return "Student needs improvement."
-    return "Student passed."
-
-
-def process_student_scores(scores)
-    average = calculate_average(scores)
-    grade = determine_grade(average)
-    performance = evaluate_performance(average)
-
-    print("Average Score:", average)
-    print("Final Grade:", grade)
-    print(performance)
+def handle_user_login(username, password, users_db):
+    user = find_user_by_username(username, users_db)
+    if user is None:
+        print("Error: user not found")
+        return False
+    if not is_password_valid(password, user['password_hash']):
+        print("Error: wrong password")
+        return False
+    if user['is_banned']:
+        print("Error: account banned")
+        return False
+    token = create_session(user)
+    print("Login successful. Token:", token)
+    return token
 ```
 
 ## Reflections
@@ -330,30 +326,69 @@ Duplicated code increases maintenance effort because changes must be made in mul
 
 ### Origin code 
 ```python
-def calculate_student_discount(price): 
-    return price * 0.10 
+scores = {
+    'math': 95,
+    'science': 73,
+    'english': 61
+}
 
-def calculate_teacher_discount(price):
-     return price * 0.10 
-     
-def calculate_senior_discount(price): 
-    return price * 0.10
+math_score = scores['math']
+if math_score >= 90:
+    math_grade = "A"
+elif math_score >= 70:
+    math_grade = "B"
+else:
+    math_grade = "F"
+print(f"Math: {math_grade}")
+
+science_score = scores['science']
+if science_score >= 90:
+    science_grade = "A"
+elif science_score >= 70:
+    science_grade = "B"
+else:
+    science_grade = "F"
+print(f"Science: {science_grade}")
+
+english_score = scores['english']
+if english_score >= 90:
+    english_grade = "A"
+elif english_score >= 70:
+    english_grade = "B"
+else:
+    english_grade = "F"
+print(f"English: {english_grade}")
 ```
-#### Problems
-* The same discount calculation is repeated three times.
-* If the discount rate changes, all functions must be updated.
-* The duplicated logic increases maintenance effort.
+
 
 ### Refactored version
 ```python
-def calculate_discount(price, discount_rate): 
-    return price * discount_rate 
-    
-student_discount = calculate_discount(100, 0.10) 
-teacher_discount = calculate_discount(100, 0.10) 
-senior_discount = calculate_discount(100, 0.10)
+scores = {
+    'math': 95,
+    'science': 73,
+    'english': 61
+}
+
+def get_letter_grade(score):
+    if score >= 90:
+        return "A"
+    elif score >= 70:
+        return "B"
+    else:
+        return "F"
+
+def print_subject_grades(scores):
+    for subject, score in scores.items():
+        grade = get_letter_grade(score)
+        print(f"{subject.capitalize()}: {grade}")
+
+print_subject_grades(scores)
 
 ```
+
+## Refactored code in repo
+![Refactored code](Screenshots/duplicate-code.png)
+
 ## Reflections
 
 ### What were the issues with duplicated code?
@@ -369,11 +404,10 @@ senior_discount = calculate_discount(100, 0.10)
 
 # Commenting & Documentation
 
-## Best Practices for Writing Comments and Documentation
+## Goal
+Learn when and how to write helpful comments and documentation.
 
-Comments should help explain **why** code exists, not simply repeat **what** the code is doing. Well-written code should be self-explanatory, with comments used only when additional context is needed.
-
-### Best Practices
+## Best Practices
 
 * Write clear and concise comments.
 * Explain the reasoning behind complex logic.
@@ -383,7 +417,6 @@ Comments should help explain **why** code exists, not simply repeat **what** the
 * Prefer meaningful variable and function names over excessive comments.
 * Document assumptions, limitations, and important business rules.
 
----
 
 ## Example of Poorly Commented Code
 
@@ -453,14 +486,244 @@ def login():
 * The code is easier to read because meaningful comments are used only where additional context is helpful.
 * The comments are brief and less likely to become outdated.
 
----
 
-# Reflection
+## Reflection
 
-## When should you add comments?
+### When should you add comments?
 
 Comments should be added when the code requires additional context that is not obvious from the implementation. Examples include explaining complex algorithms, documenting business rules, clarifying assumptions, warning about side effects, or describing why a particular approach was chosen.
 
-## When should you avoid comments and instead improve the code?
+### When should you avoid comments and instead improve the code?
 
 Comments should be avoided when they simply describe what the code is doing. In these situations, improving variable names, function names, or code structure is usually a better solution. Clean, self-explanatory code reduces the need for excessive comments and makes maintenance easier.
+
+---
+
+# Handling Errors & Edge Cases
+
+## Goal
+Learn how to write robust code that gracefully handles errors and unexpected inputs.
+
+## Common Strategies
+
+* Validate inputs before processing them.
+* Use guard clauses to handle invalid cases early.
+* Raise meaningful exceptions when errors occur.
+* Return clear error messages when appropriate.
+* Handle edge cases such as empty inputs, null values, and invalid data types.
+* Avoid deeply nested conditional logic.
+* Fail fast when required conditions are not met.
+
+## What are Guard Clauses?
+
+A guard clause is an early check that exits a function when invalid conditions are detected.
+
+Instead of nesting logic inside multiple `if` statements, guard clauses immediately handle invalid inputs and keep the main logic easier to read.
+
+### Example
+
+#### Original code
+
+```python 
+def process_student_result(student):
+    # Guard clauses handle all invalid cases early
+    if student is None:
+        raise ValueError("Student data cannot be None")
+
+    if not isinstance(student, dict):
+        raise TypeError("Student must be a dictionary")
+
+    if "name" not in student or "scores" not in student:
+        raise KeyError("Student must have both 'name' and 'scores'")
+
+    if not isinstance(student["scores"], list):
+        raise TypeError("Scores must be a list")
+
+    if len(student["scores"]) == 0:
+        raise ValueError("Scores list cannot be empty")
+
+    # Main logic is clean and easy to read
+    average = sum(student["scores"]) / len(student["scores"])
+
+    if average >= 90:
+        grade = "A"
+    elif average >= 70:
+        grade = "B"
+    else:
+        grade = "F"
+
+    print(f"Student: {student['name']}")
+    print(f"Average: {average:.2f}")
+    print(f"Grade: {grade}")
+
+
+# Test all cases
+test_cases = [
+    None,
+    "John",
+    {"name": "Alice"},
+    {"name": "Bob", "scores": "95,88"},
+    {"name": "Carol", "scores": []},
+    {"name": "David", "scores": [92, 88, 95]},
+]
+
+for test in test_cases:
+    try:
+        process_student_result(test)
+    except (ValueError, TypeError, KeyError) as e:
+        print(f"Error caught: {e}")
+    print("---")
+```
+
+
+#### Refactored code
+```python
+def process_student_result(student):
+    # Guard clauses handle all invalid cases early
+    if student is None:
+        raise ValueError("Student data cannot be None")
+
+    if not isinstance(student, dict):
+        raise TypeError("Student must be a dictionary")
+
+    if "name" not in student or "scores" not in student:
+        raise KeyError("Student must have both 'name' and 'scores'")
+
+    if not isinstance(student["scores"], list):
+        raise TypeError("Scores must be a list")
+
+    if len(student["scores"]) == 0:
+        raise ValueError("Scores list cannot be empty")
+
+    # Main logic is clean and easy to read
+    average = sum(student["scores"]) / len(student["scores"])
+
+    if average >= 90:
+        grade = "A"
+    elif average >= 70:
+        grade = "B"
+    else:
+        grade = "F"
+
+    print(f"Student: {student['name']}")
+    print(f"Average: {average:.2f}")
+    print(f"Grade: {grade}")
+
+
+# Test all cases
+test_cases = [
+    None,
+    "John",
+    {"name": "Alice"},
+    {"name": "Bob", "scores": "95,88"},
+    {"name": "Carol", "scores": []},
+    {"name": "David", "scores": [92, 88, 95]},
+]
+
+for test in test_cases:
+    try:
+        process_student_result(test)
+    except (ValueError, TypeError, KeyError) as e:
+        print(f"Error caught: {e}")
+    print("---")
+```
+---
+
+## Example of Code Without Proper Error Handling
+
+### Original Code
+
+```python 
+scores = {
+    'math': 95,
+    'science': 73,
+    'english': 61
+}
+
+def calculate_average(numbers):
+    total = sum(numbers)
+    return total / len(numbers)
+
+# These will crash without proper error handling
+print(calculate_average([85, 90, 78]))   # Works fine
+print(calculate_average([]))             # ZeroDivisionError
+print(calculate_average(None))           # TypeError
+```
+
+### Problems
+
+* Fails when the list is empty.
+* Assumes the input is always a valid list.
+* Can raise unexpected exceptions.
+* Does not provide meaningful error messages.
+
+### Edge Cases
+
+```python 
+calculate_average([])
+calculate_average(None)
+```
+
+These cases can cause runtime errors.
+
+---
+
+## Refactored Version
+
+```python 
+scores = {
+    'math': 95,
+    'science': 73,
+    'english': 61
+}
+
+def calculate_average(numbers):
+    if numbers is None:
+        raise ValueError("Input cannot be None")
+
+    if not isinstance(numbers, list):
+        raise TypeError("Input must be a list")
+
+    if len(numbers) == 0:
+        raise ValueError("List cannot be empty")
+
+    return sum(numbers) / len(numbers)
+
+# Testing all cases
+test_cases = [
+    [85, 90, 78],   # Valid input
+    [],              # Empty list
+    None,            # None input
+    "hello",         # Wrong type
+]
+
+for test in test_cases:
+    try:
+        result = calculate_average(test)
+        print(f"Average: {result}")
+    except (ValueError, TypeError) as e:
+        print(f"Error caught: {e}")
+```
+
+### Improvements
+
+* Uses guard clauses to validate inputs early.
+* Provides clear error messages.
+* Handles edge cases explicitly.
+* Prevents unexpected runtime failures.
+* Makes the function more reliable and predictable.
+
+## Refactored code in repo
+![Refactored code](Screenshots/Error-handling.png)
+
+## Reflection
+
+### What was the issue with the original code?
+
+The original function assumed that valid input would always be provided. It did not handle empty lists, null values, or invalid data types. As a result, the function could fail unexpectedly and produce confusing error messages.
+
+### How does handling errors improve reliability?
+
+Error handling makes software more robust by preventing unexpected failures and providing meaningful feedback when something goes wrong. By validating inputs and handling edge cases, developers can ensure that functions behave predictably even when they receive invalid or unexpected data.
+
+---
