@@ -40,9 +40,9 @@ Learn how to manage database schema changes and seed initial data using TypeORM 
 
 ### Migration 
 
-![Migration](image.png)
+![Migration](Screenshots/migration.png)
 Migration
-![Reverse Migration](image-1.png)
+![Reverse Migration](Screenshots/migration-reverse.png)
 Reverse Migration
 
 ```Typescript
@@ -65,7 +65,7 @@ export class AddCreatedAtToTodo1782079888442 implements MigrationInterface {
 
 ### Seeding
 
-![Seeding](image-2.png)
+![Seeding](Screenshots/seeding.png)
 Seeding
 
 ```Typescript
