@@ -51,7 +51,7 @@ so tests run with no database or Redis needed.
 ## Test Implementation
 
 ### Screenshot 
-![nest-test](milestone-9/Screenshots/nest-test.pngScreenshots/nest-test.png)
+![nest-test](Screenshots/nest-test.pngScreenshots/nest-test.png)
 
 ### `src/todos/todos.service.spec.ts`
 
