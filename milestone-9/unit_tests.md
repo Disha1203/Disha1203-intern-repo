@@ -115,3 +115,99 @@ it('shows error message when fetch fails', async () => {
 ### Test result
 
 ![Test result](Screenshots/mockAPI-test.png)
+
+# Introduction to Unit Testing with Jest
+
+## Reflection 
+
+### Why is automated testing important in software development?
+
+* Automated testing helps detect bugs before code reaches production.
+* It ensures that existing functionality continues to work after new changes are made.
+* Tests reduce the risk of regressions when modifying or refactoring code.
+* Automated tests can be run quickly and repeatedly without manual effort.
+* They improve developer confidence when deploying new features.
+* Well-written tests serve as documentation for how code is expected to behave.
+
+### What did you find challenging when writing your first Jest test?
+
+* The `act(...)` warning was confusing — tests passed but React still logged 
+warnings about state updates. The fix was wrapping `render()` in 
+`await act(async () => { ... })` for tests where the mock resolves immediately.
+
+* Also learned that the divide-by-zero test needs an arrow function wrapper:
+`expect(() => divide(10, 0)).toThrow(...)` — because Jest needs to control 
+when the function runs to catch the error itself.
+
+
+## Screenshot
+
+### math.ts
+
+```typescript
+export function add(a: number, b: number): number {
+    return a + b;
+  }
+  
+  export function subtract(a: number, b: number): number {
+    return a - b;
+  }
+  
+  export function multiply(a: number, b: number): number {
+    return a * b;
+  }
+  
+  export function divide(a: number, b: number): number {
+    if (b === 0) throw new Error('Cannot divide by zero');
+    return a / b;
+  }
+```
+
+### math.test.ts
+
+```typescript
+import { add, subtract, multiply, divide } from './math';
+
+describe('add', () => {
+  it('adds two positive numbers', () => {
+    expect(add(2, 3)).toBe(5);
+  });
+
+  it('adds a positive and negative number', () => {
+    expect(add(5, -3)).toBe(2);
+  });
+
+  it('adds two negative numbers', () => {
+    expect(add(-2, -3)).toBe(-5);
+  });
+});
+
+describe('subtract', () => {
+  it('subtracts two numbers', () => {
+    expect(subtract(10, 4)).toBe(6);
+  });
+});
+
+describe('multiply', () => {
+  it('multiplies two numbers', () => {
+    expect(multiply(3, 4)).toBe(12);
+  });
+
+  it('returns 0 when multiplied by 0', () => {
+    expect(multiply(5, 0)).toBe(0);
+  });
+});
+
+describe('divide', () => {
+  it('divides two numbers', () => {
+    expect(divide(10, 2)).toBe(5);
+  });
+
+  it('throws an error when dividing by zero', () => {
+    expect(() => divide(10, 0)).toThrow('Cannot divide by zero');
+  });
+});
+```
+
+### Result 
+![Test result](Screenshots/Jest-unit-test.png)
